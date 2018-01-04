@@ -15,14 +15,14 @@ export default {
   data() {
     return {
       levelList: null
-    }
+    };
   },
   methods: {
     getBreadcrumb() {
       let matched = this.$route.matched.filter(item => item.name);
       const first = matched[0];
-      if (first && (first.name !== '首页' || first.path !== '')) {
-        matched = [{ name: '首页', path: '/' }].concat(matched);
+      if (first && (first.name !== "首页" || first.path !== "")) {
+        matched = [{ name: "首页", path: "/" }].concat(matched);
       }
       this.levelList = matched;
     }
@@ -32,7 +32,7 @@ export default {
       this.getBreadcrumb();
     }
   }
-}
+};
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>

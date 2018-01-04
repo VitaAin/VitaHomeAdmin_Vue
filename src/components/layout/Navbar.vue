@@ -24,11 +24,11 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-import Levelbar from '../Levelbar'
-import TabsView from '../TabsView'
-import Hamburger from '../Hamburger'
-import Screenfull from '../Screenfull'
+import { mapGetters } from "vuex";
+import Levelbar from "../Levelbar";
+import TabsView from "../TabsView";
+import Hamburger from "../Hamburger";
+import Screenfull from "../Screenfull";
 
 export default {
   components: {
@@ -39,26 +39,23 @@ export default {
   },
   data() {
     return {
-      'name': 'laravue',
-      'avatar': ''
-    }
+      avatar: ""
+    };
   },
   computed: {
-    ...mapGetters([
-      'sidebar'
-    ])
+    ...mapGetters(["sidebar"])
   },
   methods: {
     toggleSideBar() {
-      this.$store.dispatch('ToggleSideBar')
+      this.$store.dispatch("ToggleSideBar");
     },
     logout() {
-      this.$store.dispatch('accountLogoutSubmit').then(
-        res => { this.$router.push('/login') }
-      );
+      this.$store.dispatch("accountLogoutSubmit").then(res => {
+        this.$router.push("/login");
+      });
     }
   }
-}
+};
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>

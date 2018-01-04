@@ -2,12 +2,11 @@ import Vue from 'vue';
 
 export default {
   // 登录
-  login(res) {
-    var params = {
-      'account': res.username,
-      'password': res.password
-    }
-    return Vue.http.post('user/login', params);
+  login(params) {
+    return Vue.http.post('user/login', {
+      'account': params.username,
+      'password': params.password
+    });
   },
   // 登出
   logout() {
