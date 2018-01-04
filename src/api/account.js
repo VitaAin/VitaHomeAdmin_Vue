@@ -3,9 +3,8 @@ import Vue from 'vue';
 export default {
   // 登录
   login(res) {
-    var params;
-    params = {
-      'login': res.username,
+    var params = {
+      'account': res.username,
       'password': res.password
     }
     return Vue.http.post('user/login', params);

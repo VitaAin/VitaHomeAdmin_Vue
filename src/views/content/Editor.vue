@@ -127,7 +127,7 @@ export default {
             },
             imageUpload: true,
             imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
-            imageUploadURL: "https://api.laravue.org/api/v1/markdown/upload",
+            imageUploadURL: "https://api.vitain.top/api/v1/markdown/upload",
             emoji: true
           });
         }
