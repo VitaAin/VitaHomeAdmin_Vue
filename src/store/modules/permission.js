@@ -11,6 +11,7 @@ import store from '../index';
  * @param route
  */
 function hasPermission(menus, route) {
+  console.log("route.path: " + route.path);
   if (route.path) {
     return menus.some(menu => route.path == menu);
   } else {
@@ -28,8 +29,9 @@ function filterAsyncRouter(asyncRouterMap, menus) {
     if (route.noValidate) {
       return true;
     }
-    if (hasPermission(menus, route)) {
-      if (route.children && route.children.length) {
+    let hasPerm = hasPermission(menus, route);
+    if (hasPerm) {
+      if (route.children && route.children.length > 0) {
         route.children = filterAsyncRouter(route.children, menus);
       }
       return true;
